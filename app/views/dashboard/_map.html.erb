@@ -11,6 +11,9 @@
     accessToken: 'pk.eyJ1Ijoidm9pcyIsImEiOiJjaXFuMXpmbWUwMHYwZ3NqZjk2cWczMHN3In0.YJuvpZWsWAf0pggg7gxXXQ'
 }).addTo(mymap);
 
-</script>
+L.marker([<%= @current_location["lat"] %>, <%= @current_location["lon"] %>]).addTo(mymap).bindPopup("You Are Here");
+  <% @venues.each do |venue| %>
+    L.marker([<%= venue["location"]["lat"]%>, <%= venue["location"]["lng"]%>]).addTo(mymap).bindPopup("<%= venue["name"] %>");
+  <% end %>
 
-95.3698
+</script>

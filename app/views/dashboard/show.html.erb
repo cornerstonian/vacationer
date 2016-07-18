@@ -3,8 +3,4 @@
   <%= link_to "Sign Out", sign_out_path, method: :delete %>
 </header>
 
-  <% if @current_location %>
     <%= render partial: 'map' %>
-    <% else %>
-   <%= render partial: 'current_location_form' %>
-<% end %>
